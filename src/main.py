@@ -26,7 +26,7 @@ while True:
     n = uart.any()
     if n:
         msg += uart.read(n)
-    v = msg.find(b'\n')
+    v = msg.find(b'-')
     if v >= 0:
         update(msg[:v+1])
         msg = b""
